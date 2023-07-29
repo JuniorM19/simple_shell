@@ -1,18 +1,17 @@
 #include "shell.h"
 
 /**
- * _myexit - Exits the shell
- * @info: Structure containing potential arguments. Used to maintain
- *         constant function prototype.
- *
- * Return: Exits with a given exit status
- *         (0) if info.argv[0] != "exit"
- */
+* _myexit - is used to exit the shell.
+* @info: the structure that contains potential arguments. Is used
+* to enable constant function prototype.
+* Return: Exits with a given exit status
+* (0) if info.argv[0] != "exit"
+*/
 int _myexit(info_t *info)
 {
 	int exitcheck;
 
-	if (info->argv[1]) /* If there is an exit argument */
+	if (info->argv[1])
 	{
 	exitcheck = _erratoi(info->argv[1]);
 	if (exitcheck == -1)
@@ -31,12 +30,11 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - Changes the current directory of the process
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *
- * Return: Always 0
- */
+* _mycd - changes current directory of the process.
+* @info: the structure that contains potential arguments. Is used
+* to enable constant function prototype.
+* Return: 0 on success.
+*/
 int _mycd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
@@ -82,12 +80,11 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - Displays help information
- * @info: Structure containing potential arguments. Used to maintain
- *         constant function prototype.
- *
- * Return: Always 0
- */
+* _myhelp - Displays the help information.
+* @info: the structure that contains potential arguments. Is used
+* to enable constant function prototype.
+* Return: On success 0.
+*/
 int _myhelp(info_t *info)
 {
 	char **arg_array;
@@ -95,6 +92,6 @@ int _myhelp(info_t *info)
 	arg_array = info->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
-	_puts(*arg_array); /* temp att_unused workaround */
+	_puts(*arg_array);
 	return (0);
 }
